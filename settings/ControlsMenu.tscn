@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqteqs6rydudo"]
+
+[ext_resource type="Script" path="res://ui/settings/ControlsMenu.gd" id="1_mhtw3"]
+[ext_resource type="Script" path="res://ui/settings/ControlsList.gd" id="2_5xdj6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l4yw"]
+
+[node name="ControlsMenu" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_mhtw3" )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_right = 1024.0
+offset_bottom = 565.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/bg = SubResource( "StyleBoxFlat_1l4yw" )
+follow_focus = true
+metadata/_edit_layout_mode = 1
+
+[node name="ControlsList" type="VBoxContainer" parent="ScrollContainer"]
+offset_right = 1024.0
+offset_bottom = 565.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( "2_5xdj6" )
+metadata/_edit_layout_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 459.0
+offset_top = 569.0
+offset_right = 565.0
+offset_bottom = 600.0
+size_flags_horizontal = 4
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+offset_right = 37.0
+offset_bottom = 31.0
+size_flags_horizontal = 8
+text = "Exit
+"
+
+[node name="Default" type="Button" parent="HBoxContainer"]
+offset_left = 41.0
+offset_right = 106.0
+offset_bottom = 31.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Default"
+
+[connection signal="button_up" from="HBoxContainer/Exit" to="." method="_on_exit_button_up"]

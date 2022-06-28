@@ -1,0 +1,173 @@
+[gd_scene load_steps=2 format=3 uid="uid://156o6xk42dd4"]
+
+[ext_resource type="Script" path="res://ui/settings/GraphicsSettings.gd" id="1_kegf5"]
+
+[node name="GraphicsSettings" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
+alignment = 1
+script = ExtResource( "1_kegf5" )
+
+[node name="AdvancedSettingsButton" type="CheckButton" parent="."]
+offset_top = 207.0
+offset_right = 190.0
+offset_bottom = 238.0
+size_flags_horizontal = 0
+text = "Advanced Settings"
+
+[node name="VSyncButton" type="CheckButton" parent="."]
+offset_top = 242.0
+offset_right = 94.0
+offset_bottom = 273.0
+size_flags_horizontal = 0
+text = "VSync"
+
+[node name="DisplayModeContainer" type="HSplitContainer" parent="."]
+offset_top = 277.0
+offset_right = 242.0
+offset_bottom = 308.0
+size_flags_horizontal = 0
+
+[node name="ScreenModeLabel" type="Label" parent="DisplayModeContainer"]
+offset_top = 2.0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Display mode
+"
+
+[node name="WindowMode" type="OptionButton" parent="DisplayModeContainer"]
+offset_left = 117.0
+offset_right = 242.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+item_count = 3
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+
+[node name="SimpleResolutionSettings" type="HBoxContainer" parent="."]
+offset_top = 312.0
+offset_right = 416.0
+offset_bottom = 343.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ResolutionLabel" type="Label" parent="SimpleResolutionSettings"]
+offset_top = 2.0
+offset_right = 143.0
+offset_bottom = 28.0
+text = "Render Resolution"
+
+[node name="ResolutionSimple" type="OptionButton" parent="SimpleResolutionSettings"]
+offset_left = 147.0
+offset_right = 272.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+item_count = 1
+selected = 0
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+
+[node name="AspectRatioLabel" type="Label" parent="SimpleResolutionSettings"]
+offset_left = 276.0
+offset_top = 2.0
+offset_right = 369.0
+offset_bottom = 28.0
+text = "Aspect ratio"
+
+[node name="AspectRatio" type="OptionButton" parent="SimpleResolutionSettings"]
+offset_left = 373.0
+offset_right = 416.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+
+[node name="AdvancedResolutionSettings" type="HBoxContainer" parent="."]
+visible = false
+offset_top = 312.0
+offset_right = 368.0
+offset_bottom = 343.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ResolutionLabel2" type="Label" parent="AdvancedResolutionSettings"]
+offset_top = 2.0
+offset_right = 87.0
+offset_bottom = 28.0
+size_flags_horizontal = 0
+text = "Resolution:"
+
+[node name="WidthLabel" type="Label" parent="AdvancedResolutionSettings"]
+offset_left = 91.0
+offset_top = 2.0
+offset_right = 138.0
+offset_bottom = 28.0
+text = "Width
+"
+
+[node name="WidthInputBox" type="SpinBox" parent="AdvancedResolutionSettings"]
+offset_left = 142.0
+offset_right = 225.0
+offset_bottom = 31.0
+max_value = 100000.0
+
+[node name="HeightLabel" type="Label" parent="AdvancedResolutionSettings"]
+offset_left = 229.0
+offset_top = 2.0
+offset_right = 281.0
+offset_bottom = 28.0
+text = "Height
+"
+
+[node name="HeightInputBox" type="SpinBox" parent="AdvancedResolutionSettings"]
+offset_left = 285.0
+offset_right = 368.0
+offset_bottom = 31.0
+max_value = 100000.0
+
+[node name="FOVLabels" type="HBoxContainer" parent="."]
+offset_left = 297.0
+offset_top = 347.0
+offset_right = 403.0
+offset_bottom = 373.0
+size_flags_horizontal = 4
+
+[node name="FOVLabel" type="Label" parent="FOVLabels"]
+offset_right = 101.0
+offset_bottom = 26.0
+size_flags_horizontal = 4
+text = "Field of view:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FOVValueLabel" type="Label" parent="FOVLabels"]
+offset_left = 105.0
+offset_top = 1.0
+offset_right = 106.0
+offset_bottom = 24.0
+
+[node name="FOVSlider" type="HSlider" parent="."]
+offset_top = 377.0
+offset_right = 700.0
+offset_bottom = 393.0
+size_flags_horizontal = 3
+min_value = 30.0
+max_value = 130.0
+value = 30.0
+rounded = true
+tick_count = 18
+
+[connection signal="toggled" from="AdvancedSettingsButton" to="." method="_on_advanced_settings_button_toggled"]
+[connection signal="toggled" from="VSyncButton" to="." method="_on_v_sync_button_toggled"]
+[connection signal="item_selected" from="DisplayModeContainer/WindowMode" to="." method="_on_window_mode_item_selected"]
+[connection signal="item_selected" from="SimpleResolutionSettings/AspectRatio" to="." method="_on_aspect_ratio_picker_item_selected"]
+[connection signal="value_changed" from="FOVSlider" to="." method="_on_fov_slider_value_changed"]

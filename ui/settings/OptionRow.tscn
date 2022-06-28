@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://she8u1bi62rn"]
+
+[ext_resource type="Script" path="res://ui/settings/OptionRow.gd" id="1_j8cxe"]
+
+[node name="OptionRow" type="HBoxContainer"]
+offset_right = 260.0
+offset_bottom = 31.0
+script = ExtResource( "1_j8cxe" )
+
+[node name="Label" type="Label" parent="."]
+minimum_size = Vector2(300, 0)
+offset_top = 2.0
+offset_right = 300.0
+offset_bottom = 28.0
+size_flags_horizontal = 3
+text = "Option name"
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 304.0
+offset_right = 379.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Button 1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 383.0
+offset_right = 458.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Button 2"
