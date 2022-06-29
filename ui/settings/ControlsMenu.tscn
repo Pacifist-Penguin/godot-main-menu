@@ -32,25 +32,24 @@ script = ExtResource( "2_5xdj6" )
 metadata/_edit_layout_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 459.0
+offset_left = 455.0
 offset_top = 569.0
-offset_right = 565.0
+offset_right = 568.0
 offset_bottom = 600.0
 size_flags_horizontal = 4
 
-[node name="Exit" type="Button" parent="HBoxContainer"]
-offset_right = 37.0
+[node name="Save" type="Button" parent="HBoxContainer"]
+offset_right = 44.0
 offset_bottom = 31.0
 size_flags_horizontal = 8
-text = "Exit
-"
+text = "Save"
 
 [node name="Default" type="Button" parent="HBoxContainer"]
-offset_left = 41.0
-offset_right = 106.0
+offset_left = 48.0
+offset_right = 113.0
 offset_bottom = 31.0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 text = "Default"
 
-[connection signal="button_up" from="HBoxContainer/Exit" to="." method="_on_exit_button_up"]
+[connection signal="button_up" from="HBoxContainer/Save" to="." method="_on_save_button_up"]

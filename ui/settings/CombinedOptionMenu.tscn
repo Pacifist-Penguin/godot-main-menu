@@ -22,9 +22,12 @@ offset_bottom = 0.0
 
 [node name="Controls" parent="." instance=ExtResource( "2_j0hqy" )]
 visible = false
+offset_top = 31.0
 
 [node name="Sound" parent="." instance=ExtResource( "4_xpw73" )]
 visible = false
+offset_top = 31.0
 
 [node name="Controls2" parent="." instance=ExtResource( "2_j0hqy" )]
 visible = false
+offset_top = 31.0

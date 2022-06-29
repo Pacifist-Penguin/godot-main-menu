@@ -9,10 +9,10 @@ extends VBoxContainer
 const SIMPLE_RESOLUTIONS := GlobalConfig.SIMPLE_RESOLUTIONS
 
 func _ready():
-	get_child(0).grab_focus()
 	for aspect_ratio in SIMPLE_RESOLUTIONS.keys():
 		AspectRatio.add_item(aspect_ratio)
 	# TODO: Set resolution control after
+	ProjectSettings.set_setting("display/window/size/viewport_width", 1440)
 
 func _set_default_resolution():
 	DisplayServer.screen_get_size()

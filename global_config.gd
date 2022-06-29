@@ -1,4 +1,4 @@
-extends Object
+extends Node
 
 const PATH = "user://settings.save"
 

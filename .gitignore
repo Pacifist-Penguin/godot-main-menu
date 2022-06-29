@@ -1,8 +1,9 @@
-
+.DS_store
 # Godot-specific ignores
 .import/
 export.cfg
 export_presets.cfg
+.godot/shader_cache
 
 # Mono-specific ignores
 .mono/

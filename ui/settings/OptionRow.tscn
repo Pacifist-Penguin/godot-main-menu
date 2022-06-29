@@ -17,16 +17,18 @@ text = "Option name"
 
 [node name="Button1" type="Button" parent="."]
 offset_left = 304.0
-offset_right = 379.0
+offset_right = 312.0
 offset_bottom = 31.0
 size_flags_horizontal = 3
 toggle_mode = true
 text = "Button 1"
+text_overrun_behavior = 3
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 383.0
-offset_right = 458.0
+offset_left = 316.0
+offset_right = 324.0
 offset_bottom = 31.0
 size_flags_horizontal = 3
 toggle_mode = true
 text = "Button 2"
+text_overrun_behavior = 3

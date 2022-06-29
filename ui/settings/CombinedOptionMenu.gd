@@ -6,15 +6,18 @@ extends TabContainer
 
 var FallbackNode: VBoxContainer
 
-func _find_node_to_focus(node: Control):
+func _ready():
+	_focus_first_focusable_child(self)
+
+func _focus_first_focusable_child(node: Control) -> bool:
 	for child in node.get_children():
 		if (child.get_focus_mode() == 2):
-			print(child)
 			child.grab_focus()
-			break
-			return
+			return true
 		else:
-			_find_node_to_focus(child)
+			if _focus_first_focusable_child(child):
+				return true
+	return false
 
 func _scroll_tab(direction: int):
 	var next_index : int = current_tab + direction
@@ -24,12 +27,7 @@ func _scroll_tab(direction: int):
 		next_index = get_tab_count() - 1
 	set_current_tab(next_index)
 	
-	
-	
-	# FIXME: Shouldn't imply that there's certain depth. Too bad!
-	# Feature creep without fixing this should be considered harmful
-	_find_node_to_focus(get_current_tab_control())
-	# _recursive_search(next_node_to_focus)
+	_focus_first_focusable_child(get_current_tab_control())
 
 func _unhandled_input(event):
 	if (event.is_action_released("close")):

@@ -1,0 +1,9 @@
+res://ui/settings/OptionRow.tscn
+res://ui/settings/ControlsMenu.tscn
+res://ui/settings/SoundSettings.tscn
+res://ui/settings/GraphicsSettings.tscn
+res://ui/settings/CombinedOptionMenu.tscn
+res://ui/settings/CombinedOptionMenu.gd
+res://ui/settings/OptionRow.gd
+res://global_config.gd
+res://ui/settings/GraphicsSettings.gd
