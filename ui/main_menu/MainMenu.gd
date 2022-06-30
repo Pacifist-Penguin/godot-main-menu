@@ -19,5 +19,5 @@ func _on_settings_button_pressed():
 	get_tree().get_root().add_child(SettingsInstance)
 
 func _unhandled_input(event):
-	if event.is_action_released("close"):
+	if event.is_action_pressed("close"):
 		_on_resume_button_pressed()

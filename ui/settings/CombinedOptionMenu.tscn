@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpi7hwaqay6u1"]
+[gd_scene load_steps=6 format=3 uid="uid://cpi7hwaqay6u1"]
 
 [ext_resource type="PackedScene" uid="uid://156o6xk42dd4" path="res://ui/settings/GraphicsSettings.tscn" id="1_78feb"]
 [ext_resource type="Script" path="res://ui/settings/CombinedOptionMenu.gd" id="1_bxjxn"]
 [ext_resource type="PackedScene" uid="uid://bqteqs6rydudo" path="res://ui/settings/ControlsMenu.tscn" id="2_j0hqy"]
 [ext_resource type="PackedScene" uid="uid://dxctwp17wijua" path="res://ui/settings/SoundSettings.tscn" id="4_xpw73"]
 
+[sub_resource type="Theme" id="Theme_dwlpt"]
+TabBar/constants/h_separation = 20
+TabBar/constants/outline_size = 120
+
 [node name="CombinedOptionMenu" type="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource( "Theme_dwlpt" )
 script = ExtResource( "1_bxjxn" )
 
 [node name="Graphics" parent="." instance=ExtResource( "1_78feb" )]
@@ -25,9 +30,5 @@ visible = false
 offset_top = 31.0
 
 [node name="Sound" parent="." instance=ExtResource( "4_xpw73" )]
-visible = false
-offset_top = 31.0
-
-[node name="Controls2" parent="." instance=ExtResource( "2_j0hqy" )]
 visible = false
 offset_top = 31.0

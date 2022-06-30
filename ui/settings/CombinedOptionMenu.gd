@@ -30,12 +30,12 @@ func _scroll_tab(direction: int):
 	_focus_first_focusable_child(get_current_tab_control())
 
 func _unhandled_input(event):
-	if (event.is_action_released("close")):
+	if (event.is_action_pressed("close")):
 		get_tree().get_root().set_input_as_handled()
 		self.queue_free()
-	elif (event.is_action_released("previous_tab")):
+	elif (event.is_action_pressed("previous_tab")):
 		_scroll_tab(-1)
-	elif (event.is_action_released("next_tab")):
+	elif (event.is_action_pressed("next_tab")):
 		_scroll_tab(1)
 
 func _exit_tree():
