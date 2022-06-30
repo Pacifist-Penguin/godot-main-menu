@@ -41,6 +41,7 @@ const SIMPLE_RESOLUTIONS := {
 @onready var joy_is_connected : bool = not is_zero_approx(float (Input.get_connected_joypads().size()))
 
 func _ready():
+	print("joy is connected:", joy_is_connected)
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 
 func _on_joy_connection_changed(device, dsc):
