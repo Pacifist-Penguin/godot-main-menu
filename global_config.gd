@@ -38,6 +38,12 @@ const SIMPLE_RESOLUTIONS := {
 	
 }
 
+@onready var joy_is_connected : bool = not is_zero_approx(float (Input.get_connected_joypads().size()))
+
+func _on_joy_connection_changed(device, dsc):
+	print(device, dsc)
+	pass
+
 var current_settings := {}
 
 func _save_data():
@@ -60,3 +66,7 @@ func set_default():
 	var directory := Directory.new()
 	directory.remove(PATH)
 	_load_data()
+
+
+func _ready():
+	Input.joy_connection_changed.connect(_on_joy_connection_changed)
