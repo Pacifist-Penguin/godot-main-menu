@@ -16,7 +16,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
-script = ExtResource( "1_cr7ue" )
+script = ExtResource("1_cr7ue")
 
 [node name="ResumeButton" type="Button" parent="."]
 offset_top = 216.0

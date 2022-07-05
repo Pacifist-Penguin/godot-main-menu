@@ -29,6 +29,10 @@ config/icon="res://icon.png"
 
 GlobalConfig="*res://global_config.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [input]
 
 ui_left={
